@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <title>Order Your Dish</title>
+      <link rel="stylesheet" href="/css/formulaire.css">
+  </head>
+
+  <body>
+      <form class="order-form">
+
+        <h2 class="form-title">Order a dish</h2>
+        
+        <!-- Informations -->
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Your name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="e.g. +32470 12 34 56" required>
+        </div>
+
+        <!-- Sauces -->
+        <div class="form-group">
+          <label for="sauce">Sauce</label>
+          <select id="sauce" required>
+            <option value="">Choose a sauce</option>
+            <option>Gombo</option>
+            <option>Arachide</option>
+            <option>Thieb</option>
+            <option>Yassa</option>
+          </select>
+        </div>
+
+        <!-- Viandes -->
+        <div class="form-group">
+          <label for="meat">Meat</label>
+          <select id="meat" required>
+            <option value="">Choose a meat</option>
+            <option>Chicken</option>
+            <option>Fish</option>
+            <option>Beef</option>
+            <option>Lamb</option>
+            <option>Shrimp</option>
+          </select>
+        </div>
+
+        <!-- Accompagnements -->
+        <div class="form-group">
+          <label for="side">Side</label>
+          <select id="side">
+            <option value="">Choose a side</option>
+            <option>Rice</option>
+            <option>Fufu</option>
+            <option>Plantains</option>
+            <option>Samosa</option>
+          </select>
+        </div>
+
+        <!-- Desserts -->
+        <div class="form-group">
+          <label for="dessert">Dessert</label>
+          <select id="dessert">
+            <option value="">Choose a dessert</option>
+            <option>Tiramisu</option>
+            <option>Verines</option>
+          </select>
+        </div>
+
+        <!-- Boissons -->
+        <div class="form-group">
+          <label for="drink">Drink</label>
+          <select id="drink">
+            <option value="">Choose a drink</option>
+            <option>Bissap</option>
+            <option>Ginger</option>
+            <option>Baobab</option>
+          </select>
+        </div>
+
+        <!-- Commentaires -->
+        <div class="form-group">
+          <label for="notes">Additional Notes</label>
+          <textarea id="notes" rows="4" placeholder="Allergies, preferences, cooking style..."></textarea>
+        </div>
+
+        <!-- Envoi -->
+        <button type="submit" class="submit-btn">Submit Order</button>
+      </form>
+
+      <script>
+        document.querySelector(".order-form").addEventListener("submit", function(e) {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const phone = document.getElementById("phone").value;
+          const sauce = document.getElementById("sauce").value;
+          const meat = document.getElementById("meat").value;
+          const side = document.getElementById("side").value;
+          const notes = document.getElementById("notes").value;
+
+          const message = 
+          `New Order:
+          Name: ${name}
+          Phone: ${phone}
+          Sauce: ${sauce}
+          Meat: ${meat}
+          Side: ${side}
+          Notes: ${notes}`;
+
+          const encoded = encodeURIComponent(message);
+
+          const whatsappNumber = "32468023738";
+
+          window.location.href= `https://wa.me/${whatsappNumber}?text=${encoded}`;
+        });
+      </script>
+  </body>
+</html>

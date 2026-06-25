@@ -1,0 +1,289 @@
+/* Design du système */
+:root {
+  --primary: #3a3534;
+  --primary-dark: #7a563f;
+  --primary-light: #c9a88f;
+
+  --bg: #996d51;
+  --text: #2b1e17;
+  --white: #ffffff;
+
+  --radius: 14px;
+  --shadow: 0 8px 25px rgba(0,0,0,0.15);
+  --transition: 0.3s ease;
+}
+
+/* Base du site */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Goudy Old Style";
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: var(--radius);
+}
+
+button {
+  font-family: "Goudy Old Style";
+  cursor: pointer;
+  border: none;
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+/* Bouttons */
+.btn-primary {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: var(--primary);
+  color: var(--white);
+  box-shadow: var(--shadow);
+  border: none;
+  outline: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-3px);
+}
+
+.btn-secondary {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: var(--primary-dark);
+  color: var(--white);
+  box-shadow: var(--shadow);
+  border: none;
+  outline: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #25D366;
+  color: var(--white);
+}
+
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+}
+
+.whatsapp-btn svg {
+  color: #25D366;
+  margin-top: 1px;
+}
+
+/* Header */
+.header-container {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-text {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-link {
+  color: var(--white);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--primary-light);
+}
+
+/* Sections */
+section {
+  padding: 90px 10%;
+}
+
+.section-title {
+  font-size: 2.4rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.section-text {
+  max-width: 600px;
+  color: #4a3a30;
+  padding-bottom: 20px;
+}
+
+/* Home Section */
+.home-section {
+  background-image: url(/images/arriere\ plan.jpg);
+  background-size: cover;
+  text-align: center;
+  padding-top: 220px;
+  padding-bottom: 200px;
+}
+
+.home-title {
+  font-size: 3rem;
+  color: #e8dcc8;
+}
+
+.home-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  color: #ffffff;
+}
+
+.home-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* About Section */
+.about-section {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.about-img {
+  width: 100%;
+  max-width: 450px;
+  box-shadow: var(--shadow);
+}
+
+/* Menu Section */
+.menu-section {
+  text-align: center;
+}
+
+.menu-intro p {
+  margin: 0 auto 20px;
+}
+
+/* Carousel */
+.carousel {
+  position: relative;
+  margin-top: 40px;
+  overflow: hidden;
+  padding-bottom: 50px;
+}
+
+.carousel-slides {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease;
+}
+
+.carousel-img {
+  width: 240px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+/* Order Section */
+.order-section {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.order-img {
+  width: 100%;
+  max-width: 350px;
+  box-shadow: var(--shadow);
+}
+
+/* Footer */
+.footer-section {
+  background-color: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .about-section,
+  .order-section {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .header-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-menu {
+    gap: 15px;
+  }
+
+  section {
+    padding: 70px 5%;
+  }
+
+  .carousel-img {
+    width: 220px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 500px) {
+  .home-title {
+    font-size: 2.2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}

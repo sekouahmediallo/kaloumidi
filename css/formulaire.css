@@ -1,0 +1,92 @@
+:root {
+  --primary: #996d51;
+  --text: #2b1e17;
+  --white: #ffffff;
+  --card-bg: #f7f2ef;
+}
+
+.order-form {
+  max-width: 600px;
+  margin: 40px auto;
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-family: "Goudy Old Style";
+}
+
+.form-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: var(--primary);
+  letter-spacing: 1px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+input,
+select,
+textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.2);
+  font-size: 1rem;
+  font-family: "Goudy Old Style";
+  background: #fff;
+  transition: 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 6px rgba(153,109,81,0.4);
+}
+
+/* Boutons */
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  font-family: "Goudy Old Style";
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: #7d563f;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .order-form {
+    padding: 20px;
+  }
+
+  .form-title {
+    font-size: 1.7rem;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 0.95rem;
+  }
+}
